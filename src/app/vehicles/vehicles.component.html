@@ -1,0 +1,21 @@
+<div class="col-8">
+
+  <table class="table">
+    <thead class="table-dark">
+      <tr class="textHeader">
+        <td>#</td>
+        <td>Marca</td>
+        <td>Línea</td>
+        <td>Modelo</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of _vehicles" class="textBody">
+        <td>{{v.id}}</td>
+        <td>{{v.marca}}</td>
+        <td>{{v.linea}}</td>
+        <td>{{v.modelo}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
