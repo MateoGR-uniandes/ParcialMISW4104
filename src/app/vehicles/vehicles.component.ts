@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from './Vehicle';
+import { TotalsVehicles } from './TotalsVehicles';
 import { VehiclesService } from './vehicles.service';
 
 @Component({
@@ -15,12 +16,24 @@ export class VehiclesComponent implements OnInit {
   getVehicles() {
     this.vehicleService.getVehicles().subscribe(data => {
       this._vehicles = data;
-      console.log(this._vehicles);
+      this.getTotals();
+    });
+  }
+
+  arrayTotals: Array<TotalsVehicles> =[];
+  getTotals(){
+    this._vehicles.forEach(element => {
+        let aux = this.arrayTotals.find(x=>x.brand.includes(element.marca))
+        if(aux)
+          aux.quantity += 1;
+        else{
+          let obj = new TotalsVehicles(`Total ${element.marca}`, 1)
+          this.arrayTotals.push(obj);
+        }
     });
   }
 
   ngOnInit() {
     this.getVehicles();
   }
-
 }

@@ -18,4 +18,9 @@
       </tr>
     </tbody>
   </table>
+
+  <div *ngFor="let t of arrayTotals" class="textBody">
+    <p style="margin-bottom: 0px;">{{t.brand}}: {{t.quantity}}</p>
+  </div>
+
 </div>
