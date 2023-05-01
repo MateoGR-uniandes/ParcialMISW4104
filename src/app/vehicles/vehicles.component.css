@@ -1,4 +1,4 @@
-.textHeader{
+.textBody{
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -6,10 +6,6 @@
   line-height: 22px;
 }
 
-.textBody{
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
+tbody > tr:last-child {
+  border-bottom:0px solid #fff;
 }
